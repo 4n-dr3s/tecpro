@@ -6,14 +6,14 @@
 
 struct Rational
 {
-   // componentes
+    int num, den;
 };
 
 int mcd(int a, int b);
 void reduce(Rational& r);
 
 void init(Rational& r);
-void init(Rational& r,int num, int den);
+void init(Rational& r, int num, int den);
 
 // Entrada - salida
 void write(const Rational& r, std::ostream& os);

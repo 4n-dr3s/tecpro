@@ -5,8 +5,8 @@ using namespace std;
 
 int main()
 {
-	Rational	a,b,r;
-	char		op;
+	Rational a, b, r;
+	char op;
 
 	while (true)
 	{
@@ -23,10 +23,9 @@ int main()
 		// Calculo del resultado
 		...
 
-		// Escritura del resultado
-		...
+			// Escritura del resultado
+			...
 	}
 
 	return 0;
 }
-
