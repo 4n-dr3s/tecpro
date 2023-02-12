@@ -49,9 +49,9 @@ void Rational::read(std::istream &is)
 // Add -----------------------
 Rational Rational::add(const Rational &that) const
 {
+	int numerador = this->num * (MCM / this->den) + that.num * (MCM / that.den);
 	int MCM = this->mcm(this->den, that.den); // Máximo comun divisor
 	int denominador = MCM;
-	int numerador = this->num * (MCM / this->den) + that.num * (MCM / that.den);
 	Rational res(numerador, denominador);
 	res.reduce();
 	return res;
@@ -74,9 +74,9 @@ Rational add(int i, const Rational &r)
 // Subtract -----------------------
 Rational Rational::subtract(const Rational &that) const
 {
+	int numerador = this->num * (MCM / this->den) - that.num * (MCM / that.den);
 	int MCM = this->mcm(this->den, that.den); // Máximo comun divisor
 	int denominador = MCM;
-	int numerador = this->num * (MCM / this->den) - that.num * (MCM / that.den);
 	Rational res(numerador, denominador);
 	res.reduce();
 	return res;
