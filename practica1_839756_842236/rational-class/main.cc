@@ -21,10 +21,24 @@ int main()
 			break;
 
 		// Calculo del resultado
-		...
+		switch (op)
+		{
+		case '+':
+			r = a.add(b);
+			break;
+		case '-':
+			r = a.subtract(b);
+			break;
+		case '*':
+			r = a.multiply(b);
+			break;
+		case '/':
+			r = a.divide(b);
+			break;
+		}
 
-			// Escritura del resultado
-			...
+		// Escritura del resultado
+		r.write(cout);
 	}
 
 	return 0;
