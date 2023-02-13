@@ -18,8 +18,11 @@ public:
 
 	virtual double valor(int t) const;
 	virtual double tae() const;
+	virtual void actualiza();
 };
 
+/*--------------------------------------------------*/
+// CUENTA CORRIENTE
 class Corriente : public Cuenta
 {
 public:
@@ -29,6 +32,8 @@ public:
 	double valor(int t) const;
 };
 
+/*--------------------------------------------------*/
+// CUENTA A PLAZO FIJO
 class Plazo : public Cuenta
 {
 public:
@@ -36,8 +41,12 @@ public:
 	Plazo(double _capital, double _interes, int _plazo);
 
 	double valor(int t) const;
+	double tae() const;
+	void actualiza();
 };
 
+/*--------------------------------------------------*/
+// CUENTA DE NÓMINA
 class Nomina : public Cuenta
 {
 private:
@@ -50,6 +59,8 @@ public:
 	double valor(int t) const;
 };
 
+/*--------------------------------------------------*/
+// CUENTA EN DIVISA
 class Divisa : public Cuenta
 {
 private:
@@ -62,4 +73,5 @@ public:
 
 	double valor(int t) const;
 	double tae() const;
+	void actualiza();
 };
