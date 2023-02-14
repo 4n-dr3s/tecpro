@@ -52,7 +52,7 @@ void Plazo::actualiza()
 {
 	if (plazo > 0) // Mientras el plazo no sea 0
 	{
-		plazo--;
+		plazo--; // Hacemos que se reduzca el plazo en una unidad de tiempo
 	}
 	else // Si es 0
 	{
