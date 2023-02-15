@@ -1,3 +1,5 @@
+// Autores: Andrei Gabriel Vlasceanu [839756] & Andrés Yubero Segura [842236]
+
 #include "cuenta.h"
 #include <iostream>
 #include <cmath>
@@ -10,7 +12,7 @@ Cuenta::Cuenta(double _capital, double _interes, int _plazo)
 
 double Cuenta::valor(int t) const
 {
-	return 0.0;
+	return capital;
 }
 
 double Cuenta::tae() const
