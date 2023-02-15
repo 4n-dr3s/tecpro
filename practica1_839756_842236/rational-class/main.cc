@@ -5,18 +5,21 @@ using namespace std;
 
 int main()
 {
-	Rational a, b, r;
+	Rational /*a,*/ b, r;
+	int a;
 	char op;
 
 	while (true)
 	{
 		cout << "? " << flush;
-		a.read(cin);
+		cin >> a;
+		// a.read(cin);
 		if (cin.fail())
 			break;
 
 		cin >> op;
 		b.read(cin);
+		// cin >> b;
 		if (cin.fail())
 			break;
 
@@ -24,16 +27,16 @@ int main()
 		switch (op)
 		{
 		case '+':
-			r = a.add(b);
+			r = add(a, b); // a.add(b);
 			break;
 		case '-':
-			r = a.subtract(b);
+			r = subtract(a, b); // a.subtract(b);
 			break;
 		case '*':
-			r = a.multiply(b);
+			r = multiply(a, b); // a.multiply(b);
 			break;
 		case '/':
-			r = a.divide(b);
+			r = divide(a, b); // a.divide(b);
 			break;
 		}
 

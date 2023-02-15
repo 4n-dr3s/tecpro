@@ -18,6 +18,11 @@ void Rational::reduce()
 	int MCD = mcd(num, den);
 	num /= MCD;
 	den /= MCD;
+	if (den < 0)
+	{
+		num = -num;
+		den = -den;
+	}
 }
 
 // Constructor -----------------------
@@ -49,8 +54,8 @@ void Rational::read(std::istream &is)
 // Add -----------------------
 Rational Rational::add(const Rational &that) const
 {
-	int numerador = this->num * (MCM / this->den) + that.num * (MCM / that.den);
 	int MCM = this->mcm(this->den, that.den); // Máximo comun divisor
+	int numerador = this->num * (MCM / this->den) + that.num * (MCM / that.den);
 	int denominador = MCM;
 	Rational res(numerador, denominador);
 	res.reduce();
@@ -74,8 +79,8 @@ Rational add(int i, const Rational &r)
 // Subtract -----------------------
 Rational Rational::subtract(const Rational &that) const
 {
-	int numerador = this->num * (MCM / this->den) - that.num * (MCM / that.den);
 	int MCM = this->mcm(this->den, that.den); // Máximo comun divisor
+	int numerador = this->num * (MCM / this->den) - that.num * (MCM / that.den);
 	int denominador = MCM;
 	Rational res(numerador, denominador);
 	res.reduce();
@@ -93,7 +98,8 @@ Rational Rational::subtract(int i) const
 
 Rational subtract(int i, const Rational &r)
 {
-	return r.subtract(i);
+	Rational j(i, 1);
+	return j.subtract(r);
 }
 
 // Multiply -------------------------

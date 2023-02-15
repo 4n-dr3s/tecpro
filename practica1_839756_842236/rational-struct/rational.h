@@ -5,7 +5,6 @@
 using namespace std;
 
 // Solucion con atributos publicos.
-
 struct Rational
 {
     int num, den;
@@ -40,3 +39,27 @@ Rational multiply(int i, const Rational &r);
 Rational divide(const Rational &r1, const Rational &r2);
 Rational divide(const Rational &r, int i);
 Rational divide(int i, const Rational &r);
+
+// Operaciones de suma -------------------------
+Rational operator+(const Rational &r1, const Rational &r2);
+Rational operator+(const int i, const Rational &r2);
+Rational operator+(const Rational &r1, int i);
+
+// Operaciones de resta -------------------------
+Rational operator-(const Rational &r1, const Rational &r2);
+Rational operator-(const int i, const Rational &r2);
+Rational operator-(const Rational &r1, int i);
+
+// Operaciones de multiplicación -------------------------
+Rational operator*(const Rational &r1, const Rational &r2);
+Rational operator*(const int i, const Rational &r2);
+Rational operator*(const Rational &r1, int i);
+
+// Operaciones de división -------------------------
+Rational operator/(const Rational &r1, const Rational &r2);
+Rational operator/(const int i, const Rational &r2);
+Rational operator/(const Rational &r1, int i);
+
+// Operadores de escritura y lectura -------------------------
+ostream &operator<<(ostream &stream, const Rational &r);
+istream &operator>>(istream &stream, Rational &r);
