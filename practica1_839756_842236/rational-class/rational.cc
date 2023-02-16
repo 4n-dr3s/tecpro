@@ -76,6 +76,21 @@ Rational add(int i, const Rational &r)
 	return r.add(i);
 }
 
+Rational Rational::operator+(const Rational &that)
+{
+	return this->add(that);
+}
+
+Rational Rational::operator+(int i)
+{
+	return this->add(i);
+}
+
+Rational operator+(int i, const Rational &r)
+{
+	return add(i, r);
+}
+
 // Subtract -----------------------
 Rational Rational::subtract(const Rational &that) const
 {
@@ -102,6 +117,21 @@ Rational subtract(int i, const Rational &r)
 	return j.subtract(r);
 }
 
+Rational Rational::operator-(const Rational &that)
+{
+	return this->subtract(that);
+}
+
+Rational Rational::operator-(int i)
+{
+	return this->subtract(i);
+}
+
+Rational operator-(int i, const Rational &r)
+{
+	return subtract(i, r);
+}
+
 // Multiply -------------------------
 Rational Rational::multiply(const Rational &that) const
 {
@@ -111,6 +141,7 @@ Rational Rational::multiply(const Rational &that) const
 	res.reduce();
 	return res;
 }
+
 Rational Rational::multiply(int i) const
 {
 	int numerador = this->num * i;
@@ -119,9 +150,25 @@ Rational Rational::multiply(int i) const
 	res.reduce();
 	return res;
 }
+
 Rational multiply(int i, const Rational &r)
 {
 	return r.multiply(i);
+}
+
+Rational Rational::operator*(const Rational &that)
+{
+	return this->multiply(that);
+}
+
+Rational Rational::operator*(int i)
+{
+	return this->multiply(i);
+}
+
+Rational operator*(int i, const Rational &r)
+{
+	return multiply(i, r);
 }
 
 // Divide ------------------------------
@@ -147,4 +194,32 @@ Rational divide(int i, const Rational &r)
 {
 	Rational q(i, 1);
 	return q.divide(r);
+}
+
+Rational Rational::operator/(const Rational &that)
+{
+	return this->divide(that);
+}
+
+Rational Rational::operator/(int i)
+{
+	return this->divide(i);
+}
+
+Rational operator/(int i, const Rational &r)
+{
+	return divide(i, r);
+}
+
+// Operadores de escritura y lectura
+ostream &operator<<(ostream &stream, const Rational &r)
+{
+	r.write(stream);
+	return stream;
+}
+
+istream &operator>>(istream &stream, Rational &r)
+{
+	r.read(stream);
+	return stream;
 }

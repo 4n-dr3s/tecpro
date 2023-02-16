@@ -12,7 +12,7 @@ int main()
 	{
 		cout << "? " << flush;
 
-		/*read(a, cin);
+		read(a, cin);
 		if (cin.fail())
 			break;
 
@@ -20,14 +20,10 @@ int main()
 
 		read(b, cin);
 		if (cin.fail())
-			break;*/
-
-		cin >> a >> b >> c;
-		r = a + b ∗ c;
-		cout << r << endl;
+			break;
 
 		// Calculo del resultado
-		/*switch (op)
+		switch (op)
 		{
 		case '+':
 			r = add(a, b);
@@ -41,10 +37,10 @@ int main()
 		case '/':
 			r = divide(a, b);
 			break;
-		}*/
+		}
 
 		// Escritura del resultado
-		// write(r, cout);
+		write(r, cout);
 	}
 
 	return 0;

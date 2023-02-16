@@ -1,3 +1,5 @@
+// Autores: Andrei Gabriel Vlasceanu [839756] & Andrés Yubero Segura [842236]
+
 #include "cuenta.h"
 #include <iostream>
 #include <iomanip>
