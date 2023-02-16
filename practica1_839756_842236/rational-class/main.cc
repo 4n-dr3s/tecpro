@@ -40,6 +40,7 @@ int main()
 		}
 
 		// Escritura del resultado
+		cout << "= ";
 		r.write(cout);*/
 
 		Rational a, b, c, r;

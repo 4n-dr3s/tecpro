@@ -40,6 +40,7 @@ int main()
 		}
 
 		// Escritura del resultado
+		cout << "= ";
 		write(r, cout);
 	}
 
