@@ -1,3 +1,5 @@
+// Autores: Andrei Vlasceanu [839756] & Andres Yubero [842236]
+
 #include "rational.h"
 #include <iostream>
 
@@ -10,7 +12,7 @@ int main()
 
 	while (true)
 	{
-		/*cout << "? " << flush;
+		cout << "? " << flush;
 		cin >> a;
 		// a.read(cin);
 		if (cin.fail())
@@ -41,12 +43,12 @@ int main()
 
 		// Escritura del resultado
 		cout << "= ";
-		r.write(cout);*/
+		r.write(cout);
 
-		Rational a, b, c, r;
+		/*Rational a, b, c, r;
 		cin >> a >> b >> c;
 		r = a + b * c;
-		cout << r << endl;
+		cout << r << endl;*/
 	}
 
 	return 0;
