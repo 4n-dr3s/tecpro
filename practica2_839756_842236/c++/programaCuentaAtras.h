@@ -6,15 +6,18 @@
 #include "instruccionRead.h"
 #include "instruccionAdd.h"
 #include "instruccionWrite.h"
+#include "instruccionPush.h"
+#include "instruccionDup.h"
+#include "instruccionJumpif.h"
 
-class ProgramaSuma
+class ProgramaCuentaAtras
 {
 private:
-    const int len = 4;
+    const int len = 7;
     InstruccionPtr *instrucciones = new InstruccionPtr[len];
 
 public:
-    ProgramaSuma();
+    ProgramaCuentaAtras();
     void ejecutar();
     void listar();
 };

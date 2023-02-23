@@ -8,11 +8,11 @@ ProgramaSuma::ProgramaSuma()
     instrucciones[1] = new InstruccionRead();
     instrucciones[2] = new InstruccionAdd();
     instrucciones[3] = new InstruccionWrite();
-    s = new stack<int>;
 }
 
 void ProgramaSuma::ejecutar()
 {
+    stack<int> *s = new stack<int>;
     cout << "Ejecución:" << endl;
     for (int i = 0; i < len; i++)
     {

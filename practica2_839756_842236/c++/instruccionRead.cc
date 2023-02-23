@@ -5,6 +5,7 @@
 void InstruccionRead::ejecutar(stack<int> *s)
 {
     int x;
+    cout << "? ";
     cin >> x;
     s->push(x);
 }
