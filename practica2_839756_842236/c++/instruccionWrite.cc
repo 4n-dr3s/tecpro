@@ -7,7 +7,7 @@ void InstruccionWrite::ejecutar(stack<int> *s)
     int x;
     x = s->top();
     s->pop();
-    cout << x;
+    cout << x << endl;
 }
 
 void InstruccionWrite::listar()

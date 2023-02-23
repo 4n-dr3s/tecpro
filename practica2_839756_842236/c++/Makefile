@@ -1,24 +1,12 @@
-# Autores: Andrei Vlasceanu [839756] & Andres Yubero [842236]
+# Object files to either reference or create                          
+OBJECTS = instruccionAdd.o instruccionRead.o instruccionWrite.o programaSuma.o main.o
+# The executable file that will be created at the end                 
+EXEC = main                                                     
+# The flags to use for compilation                                    
+FLAGS = -Wall                                                         
+# The code compiler to use for compilation                            
+CC = g++                                                              
 
-PROG:=main
-SRCS:=instruccionAdd.cc instruccionRead.cc instruccionWrite.cc programaSuma.cc main.cc
-CXX:= g++ -O2
-OBJS:=$(SRCS:.cc=.o)
-
-all: $(PROG) main.s
-
-$(PROG): $(OBJS)
-	$(CXX) -o $@ $(OBJS)
-
-.cc.o:
-	$(CXX) -c $<
-
-edit:
-	geany -s *.h *.cc &
-
-clean:
-	@rm -f $(PROG) $(OBJS) core *.s
-
-#rational.o: rational.cc rational.h
-#main.o: main.cc rational.h
-#main.s: main.cc rational.h
+# Perform action on all object files (May or may not exist)           
+all: $(OBJECTS)                                                   
+	$(CC) $(FLAGS) -o $(EXEC) $(OBJECTS)

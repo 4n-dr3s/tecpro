@@ -1,11 +1,6 @@
 // Autores: Andrei Vlasceanu [839756] & Andres Yubero [842236]
 
-#pragma once
-
 #include "programaSuma.h"
-#include "instruccionRead.h"
-#include "instruccionAdd.h"
-#include "instruccionWrite.h"
 
 ProgramaSuma::ProgramaSuma()
 {
