@@ -12,4 +12,5 @@ class Instruccion
 public:
     virtual void ejecutar(stack<int> *s) = 0;
     virtual void listar() = 0;
+    virtual bool esJumpif();
 };

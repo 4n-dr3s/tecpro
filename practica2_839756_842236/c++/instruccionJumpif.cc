@@ -7,17 +7,22 @@ InstruccionJumpif::InstruccionJumpif(int _l)
     l = _l;
 }
 
-void InstruccionJumpif::ejecutar(stack<int> *s)
+void InstruccionJumpif::ejecutar(stack<int> *s /*, int &counter*/)
 {
     int x = s->top();
     s->pop();
     if (x >= 0)
     {
-        // Saltar a la línea l
+        // counter = l;
     }
 }
 
 void InstruccionJumpif::listar()
 {
     cout << "jumpif " << l << endl;
+}
+
+bool InstruccionJumpif::esJumpif()
+{
+    return true;
 }

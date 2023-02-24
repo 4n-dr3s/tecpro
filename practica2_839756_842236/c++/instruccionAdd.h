@@ -7,6 +7,6 @@
 class InstruccionAdd : public Instruccion
 {
 public:
-    virtual void ejecutar(stack<int> *s);
-    virtual void listar();
+    void ejecutar(stack<int> *s);
+    void listar();
 };

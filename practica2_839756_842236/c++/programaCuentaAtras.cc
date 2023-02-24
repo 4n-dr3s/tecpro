@@ -20,8 +20,17 @@ void ProgramaCuentaAtras::ejecutar()
     cout << "Ejecución:" << endl;
     while (counter < len)
     {
+        /*if (!instrucciones[counter]->esJumpif())
+        {*/
         instrucciones[counter]->ejecutar(s);
         counter++;
+        /*}
+        else
+        {
+            cout << "Hemos llegado al Jumpif" << endl;
+            break;
+            // instrucciones[counter]->ejecutar(s, counter);
+        }*/
     }
 }
 

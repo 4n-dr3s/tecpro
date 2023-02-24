@@ -11,6 +11,8 @@ private:
 
 public:
     InstruccionJumpif(int _l);
-    virtual void ejecutar(stack<int> *s);
-    virtual void listar();
+    void ejecutar(stack<int> *s);
+    // void ejecutar(stack<int> *s, int &counter);
+    void listar();
+    bool esJumpif();
 };
