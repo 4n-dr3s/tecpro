@@ -14,9 +14,10 @@ void ProgramaSuma::ejecutar()
 {
     stack<int> *s = new stack<int>;
     cout << "Ejecución:" << endl;
-    for (int i = 0; i < len; i++)
+    int counter = 0;
+    while (counter >= 0 && counter < len)
     {
-        instrucciones[i]->ejecutar(s);
+        instrucciones[counter]->ejecutar(s, counter);
     }
 }
 

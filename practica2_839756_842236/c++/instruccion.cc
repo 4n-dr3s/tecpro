@@ -2,7 +2,8 @@
 
 #include "instruccion.h"
 
-bool Instruccion::esJumpif()
+void Instruccion::ejecutar(stack<int> *s, int &counter)
 {
-    return false;
+    ejecutar(s);
+    counter++;
 }

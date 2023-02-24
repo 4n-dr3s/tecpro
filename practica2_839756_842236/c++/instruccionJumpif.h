@@ -12,7 +12,6 @@ private:
 public:
     InstruccionJumpif(int _l);
     void ejecutar(stack<int> *s);
-    // void ejecutar(stack<int> *s, int &counter);
+    void ejecutar(stack<int> *s, int &counter);
     void listar();
-    bool esJumpif();
 };

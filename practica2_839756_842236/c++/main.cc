@@ -2,12 +2,13 @@
 
 #include "programaSuma.h"
 #include "programaCuentaAtras.h"
+#include "programaFactorial.h"
 
 using namespace std;
 
 int main()
 {
-    ProgramaCuentaAtras programa;
+    ProgramaFactorial programa;
     programa.listar();
     cout << endl;
     programa.ejecutar();

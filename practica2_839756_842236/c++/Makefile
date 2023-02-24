@@ -1,5 +1,5 @@
 # Object files to either reference or create
-OBJECTS = instruccion.o instruccionAdd.o instruccionDup.o instruccionJumpif.o instruccionPush.o instruccionRead.o instruccionWrite.o programaCuentaAtras.o programaSuma.o main.o
+OBJECTS = instruccion.o instruccionAdd.o instruccionDup.o instruccionJumpif.o instruccionPush.o instruccionRead.o instruccionWrite.o instruccionMul.o instruccionOver.o instruccionSwap.o programaSuma.o programaCuentaAtras.o programaFactorial.o main.o
 # The executable file that will be created at the end
 EXEC = main
 # The flags to use for compilation
