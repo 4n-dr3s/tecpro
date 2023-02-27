@@ -11,6 +11,6 @@ private:
 
 public:
     InstruccionPush(int _c);
-    virtual void ejecutar(stack<int> *s);
-    virtual void listar();
+    void ejecutar(stack<int> *s);
+    void listar();
 };

@@ -1,7 +1,8 @@
-package java;
-
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello Ni...");
+        ProgramaSuma programa = new ProgramaSuma();
+        programa.listar();
+        System.out.println("");
+        programa.ejecutar();
     }
 }

@@ -12,6 +12,6 @@ using InstruccionPtr = Instruccion *;
 class Programa
 {
 public:
-    virtual void ejecutar(stack<int> *s) = 0;
+    virtual void ejecutar() = 0;
     virtual void listar() = 0;
 };
