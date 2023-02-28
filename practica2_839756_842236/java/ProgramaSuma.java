@@ -1,4 +1,5 @@
 import java.util.Stack;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class ProgramaSuma extends Instruccion {
 
@@ -15,9 +16,9 @@ public class ProgramaSuma extends Instruccion {
     public void ejecutar() {
         Stack<Integer> s = new Stack<Integer>();
         System.out.println("Ejecución:");
-        int counter = 0;
-        while (counter >= 0 && counter < len) {
-            instrucciones[counter].ejecutar(s);
+        AtomicInteger counter = new AtomicInteger(0);
+        while (counter.get() >= 0 && counter.get() < len) {
+            instrucciones[counter.get()].ejecutar(s, counter);
         }
     }
 

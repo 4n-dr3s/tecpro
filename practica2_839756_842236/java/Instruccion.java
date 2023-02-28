@@ -1,12 +1,13 @@
 import java.util.Stack;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class Instruccion {
     public void ejecutar(Stack<Integer> s) {
     }
 
-    public void ejecutar(Stack<Integer> s, int counter) {
+    public void ejecutar(Stack<Integer> s, AtomicInteger counter) {
         ejecutar(s);
-        counter++;
+        counter.getAndIncrement();
     }
 
     public void listar() {

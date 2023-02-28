@@ -1,4 +1,5 @@
 import java.util.Stack;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class InstruccionJumpif extends Instruccion {
     private int l;
@@ -12,12 +13,12 @@ public class InstruccionJumpif extends Instruccion {
     }
 
     @Override
-    public void ejecutar(Stack<Integer> s, int counter) {
+    public void ejecutar(Stack<Integer> s, AtomicInteger counter) {
         int x = s.pop();
         if (x >= 0) {
-            counter = l;
+            counter.set(l);
         } else {
-            counter++;
+            counter.getAndIncrement();
         }
     }
 
