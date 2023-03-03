@@ -4,6 +4,10 @@
 
 ProgramaFactorial::ProgramaFactorial()
 {
+    len = 14;                                // Número de instrucciones a ejecutar
+    instrucciones = new InstruccionPtr[len]; // Reservamos espacio para "len" instrucciones
+
+    // Instrucciones del programa
     instrucciones[0] = new InstruccionPush(1);
     instrucciones[1] = new InstruccionRead();
     instrucciones[2] = new InstruccionSwap();
@@ -18,25 +22,4 @@ ProgramaFactorial::ProgramaFactorial()
     instrucciones[11] = new InstruccionJumpif(2);
     instrucciones[12] = new InstruccionSwap();
     instrucciones[13] = new InstruccionWrite();
-}
-
-void ProgramaFactorial::ejecutar()
-{
-    stack<int> *s = new stack<int>;
-    cout << "Ejecución:" << endl;
-    int counter = 0;
-    while (counter >= 0 && counter < len)
-    {
-        instrucciones[counter]->ejecutar(s, counter);
-    }
-}
-
-void ProgramaFactorial::listar()
-{
-    cout << "Programa:" << endl;
-    for (int i = 0; i < len; i++)
-    {
-        cout << i << "  ";
-        instrucciones[i]->listar();
-    }
-}
+};

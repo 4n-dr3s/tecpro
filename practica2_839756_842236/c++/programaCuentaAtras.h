@@ -4,14 +4,8 @@
 
 #include "programa.h"
 
-class ProgramaCuentaAtras
+class ProgramaCuentaAtras : public Programa
 {
-private:
-    const int len = 7;
-    InstruccionPtr *instrucciones = new InstruccionPtr[len];
-
 public:
     ProgramaCuentaAtras();
-    void ejecutar();
-    void listar();
 };

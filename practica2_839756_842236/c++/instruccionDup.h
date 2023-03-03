@@ -7,6 +7,8 @@
 class InstruccionDup : public Instruccion
 {
 public:
+    // Redefine la forma de ejecutar
     void ejecutar(stack<int> *s);
+    // Redefine la forma de listar
     void listar();
 };

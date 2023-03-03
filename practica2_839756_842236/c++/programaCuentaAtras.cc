@@ -4,6 +4,10 @@
 
 ProgramaCuentaAtras::ProgramaCuentaAtras()
 {
+    len = 7;                                 // Número de instrucciones a ejecutar
+    instrucciones = new InstruccionPtr[len]; // Reservamos espacio para "len" instrucciones
+
+    // Instrucciones del programa
     instrucciones[0] = new InstruccionRead();
     instrucciones[1] = new InstruccionDup();
     instrucciones[2] = new InstruccionWrite();
@@ -11,25 +15,4 @@ ProgramaCuentaAtras::ProgramaCuentaAtras()
     instrucciones[4] = new InstruccionAdd();
     instrucciones[5] = new InstruccionDup();
     instrucciones[6] = new InstruccionJumpif(1);
-}
-
-void ProgramaCuentaAtras::ejecutar()
-{
-    stack<int> *s = new stack<int>;
-    cout << "Ejecución:" << endl;
-    int counter = 0;
-    while (counter >= 0 && counter < len)
-    {
-        instrucciones[counter]->ejecutar(s, counter);
-    }
-}
-
-void ProgramaCuentaAtras::listar()
-{
-    cout << "Programa:" << endl;
-    for (int i = 0; i < len; i++)
-    {
-        cout << i << "  ";
-        instrucciones[i]->listar();
-    }
-}
+};

@@ -11,7 +11,10 @@ private:
 
 public:
     InstruccionJumpif(int _l);
+    // Redefine la forma de ejecutar
     void ejecutar(stack<int> *s);
+    // Redefine la forma de ejecutar
     void ejecutar(stack<int> *s, int &counter);
+    // Redefine la forma de listar
     void listar();
 };

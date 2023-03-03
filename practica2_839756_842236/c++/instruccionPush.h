@@ -11,6 +11,8 @@ private:
 
 public:
     InstruccionPush(int _c);
+    // Redefine la forma de ejecutar
     void ejecutar(stack<int> *s);
+    // Redefine la forma de listar
     void listar();
 };

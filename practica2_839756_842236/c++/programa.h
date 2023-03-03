@@ -18,7 +18,11 @@ using InstruccionPtr = Instruccion *;
 
 class Programa
 {
+protected:
+    int len = 0;                   // Número de instrucciones a ejecutar
+    InstruccionPtr *instrucciones; // Puntero a puntero de instrucciones
+
 public:
-    virtual void ejecutar() = 0;
-    virtual void listar() = 0;
+    void ejecutar();
+    void listar();
 };
