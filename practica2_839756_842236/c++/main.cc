@@ -8,7 +8,7 @@ using namespace std;
 
 int main()
 {
-    ProgramaFactorial programa;
+    ProgramaSuma programa;
     programa.listar();
     cout << endl;
     programa.ejecutar();

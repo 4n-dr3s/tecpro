@@ -2,9 +2,16 @@
 
 #pragma once
 
-#include <iostream>
-#include <stack>
 #include "instruccion.h"
+#include "instruccionRead.h"
+#include "instruccionAdd.h"
+#include "instruccionWrite.h"
+#include "instruccionPush.h"
+#include "instruccionDup.h"
+#include "instruccionJumpif.h"
+#include "instruccionMul.h"
+#include "instruccionSwap.h"
+#include "instruccionOver.h"
 
 using namespace std;
 using InstruccionPtr = Instruccion *;

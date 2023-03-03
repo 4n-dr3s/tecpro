@@ -3,12 +3,6 @@
 #pragma once
 
 #include "programa.h"
-#include "instruccionRead.h"
-#include "instruccionAdd.h"
-#include "instruccionWrite.h"
-#include "instruccionPush.h"
-#include "instruccionDup.h"
-#include "instruccionJumpif.h"
 
 class ProgramaCuentaAtras
 {

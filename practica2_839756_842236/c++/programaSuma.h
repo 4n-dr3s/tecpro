@@ -3,9 +3,6 @@
 #pragma once
 
 #include "programa.h"
-#include "instruccionRead.h"
-#include "instruccionAdd.h"
-#include "instruccionWrite.h"
 
 class ProgramaSuma
 {
