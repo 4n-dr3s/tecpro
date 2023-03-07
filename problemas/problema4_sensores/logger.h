@@ -54,10 +54,6 @@ public:
         }
     }
 
-    void toString(T value)
-    {
-    }
-
     void log()
     {
         cout << etiqueta << ":" << endl;
