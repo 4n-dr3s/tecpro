@@ -15,6 +15,13 @@ ostream &operator<<(ostream &stream, const std::vector<T> &v)
 }
 
 template <typename T>
+ostream &operator<<(ostream &stream, const std::pair<T, T> &p)
+{
+    stream << p.first << ", " << p.second;
+    return stream;
+}
+
+template <typename T>
 class Logger
 {
 private:
@@ -59,7 +66,17 @@ public:
         cout << etiqueta << ":" << endl;
         for (auto s : stores)
         {
-            cout << "\t" << s->name() << ": " << s->value() << endl;
+            cout << "\t" << s->name() << ": ";
+            StoreRange<T> *sr = dynamic_cast<StoreRange<T> *>(s);
+            if (sr)
+            {
+                cout << sr->values();
+            }
+            else
+            {
+                cout << s->value();
+            }
+            cout << endl;
         }
     }
 };

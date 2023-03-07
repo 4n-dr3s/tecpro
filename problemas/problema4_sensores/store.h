@@ -1,4 +1,5 @@
 #pragma once
+#include <iostream>
 #include <algorithm>
 #include <string>
 #include <complex>
@@ -85,7 +86,7 @@ public:
 };
 
 template <typename T>
-class StoreMax : public Store<T>
+class StoreMax : virtual public Store<T>
 {
 private:
 	using Store<T>::val;
@@ -112,10 +113,10 @@ public:
 };
 
 template <typename T>
-class StoreMin : public Store<T>
+class StoreMin : virtual public Store<T>
 {
 private:
-	using Store<T>::val;
+	T val;
 	bool first;
 
 public:
@@ -136,21 +137,34 @@ public:
 			val = (v < val) ? v : val; // min(val, v);
 		}
 	}
+
+	virtual T value() const { return val; }
 };
 
 template <typename T>
-class StoreRange : public Store<T>
+class StoreRange : virtual public StoreMin<T>, virtual public StoreMax<T>
 {
-private:
-	pair<T, T> valor; // <min, max>
-
 public:
-	StoreRange(const T &ini)
+	StoreRange() : StoreMin<T>(), StoreMax<T>() {}
+
+	string name() const override { return "range"; }
+
+	using Store<T>::push;
+	void push(const T &v) override
 	{
-		valor.first = ini;
-		valor.second = ini;
+		StoreMin<T>::push(v);
+		StoreMax<T>::push(v);
 	}
-}
+
+	// No es value(), esta devuelve pair<T,T>
+	pair<T, T> values()
+	{
+		pair<T, T> valor; // <min, max>
+		valor.first = StoreMin<T>::value();
+		valor.second = StoreMax<T>::value();
+		return valor;
+	}
+};
 
 template <typename T>
 class StoreAvg : public Store<T>
