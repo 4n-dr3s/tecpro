@@ -1,3 +1,5 @@
+// Autores: Andrei Gabriel Vlasceanu [839756] & Andrés Yubero Segura [842236]
+
 #include "store.h"
 #include "logger.h"
 #include <complex>

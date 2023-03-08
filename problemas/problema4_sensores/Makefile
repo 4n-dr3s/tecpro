@@ -1,7 +1,9 @@
+# Autores: Andrei Gabriel Vlasceanu [839756] & Andrés Yubero Segura [842236]
+
 PROG:=main
 SRCS:=main.cc
 
-CXX:= g++ -std=c++11 -Wall
+CXX:= g++ -Wall
 
 OBJS:=$(SRCS:.cc=.o)
 DEPS:=$(SRCS:.cc=.d)

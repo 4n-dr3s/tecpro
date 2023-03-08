@@ -1,5 +1,6 @@
+// Autores: Andrei Gabriel Vlasceanu [839756] & Andrés Yubero Segura [842236]
+
 #pragma once
-#include <iostream>
 #include <algorithm>
 #include <string>
 #include <complex>
