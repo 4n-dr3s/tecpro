@@ -1,9 +1,10 @@
+// Autores: Andrei Vlasceanu [839756] & Andres Yubero [842236]
+
 class Main
 {
 	public static void main(String[] args)
 	{
 		// Productos estandar
-
 		Contenedor<Carga> contenedor_estandar = new Contenedor<>(4);
 
 		Producto longaniza_graus = new Producto("Longaniza de Graus",0.5,0.8);
