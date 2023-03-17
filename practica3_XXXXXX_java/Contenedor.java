@@ -22,4 +22,9 @@ public class Contenedor<T extends Guardable> extends Transportable implements Ca
         return almacen.guardar(cargable);
     }
 
+    @Override
+    public String toString() {
+        return nombre() + " [" + volumen() + " m3] [" + peso() + "kg]\n" + almacen.mostrar();
+    }
+
 }

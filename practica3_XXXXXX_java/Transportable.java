@@ -18,4 +18,8 @@ abstract class Transportable implements Guardable {
         return peso;
     }
 
+    @Override
+    public String toString() {
+        return nombre() + " [" + volumen() + " m3] [" + peso() + "kg]\n" + nombre();
+    }
 }

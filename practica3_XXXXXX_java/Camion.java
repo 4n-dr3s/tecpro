@@ -25,6 +25,6 @@ public class Camion {
 
     @Override
     public String toString() {
-        return "Camioncitoo";
+        return this.nombre() + " [" + this.volumen() + " m3] [" + this.peso() + "kg]\n" + almacen.mostrar();
     }
 }
