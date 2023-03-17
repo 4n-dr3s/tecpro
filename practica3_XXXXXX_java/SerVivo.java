@@ -8,4 +8,8 @@ public class SerVivo extends Transportable {
         this.peso = peso;
     }
 
+    public String tipo() {
+        return "Seres Vivos";
+    }
+
 }

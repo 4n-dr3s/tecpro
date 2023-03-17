@@ -8,4 +8,8 @@ public class Toxico extends Transportable {
         this.peso = peso;
     }
 
+    public String tipo() {
+        return "Productos Toxicos";
+    }
+
 }

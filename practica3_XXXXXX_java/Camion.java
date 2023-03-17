@@ -12,19 +12,23 @@ public class Camion {
     }
 
     public double volumen() {
+        // Devuelve la capacidad del camión
         return almacen.volumen();
     }
 
     public double peso() {
+        // Devuelve el peso del camión
         return almacen.peso();
     }
 
     public boolean guardar(Carga cargable) {
+        // Guardamos una nueva carga en el camión
         return almacen.guardar(cargable);
     }
 
     @Override
     public String toString() {
-        return this.nombre() + " [" + this.volumen() + " m3] [" + this.peso() + "kg]\n" + almacen.mostrar();
+        // Mostramos el camión y todo lo que hay incluido en él
+        return nombre() + " [" + volumen() + " m3] [" + peso() + " kg]\n" + almacen.mostrar(0);
     }
 }

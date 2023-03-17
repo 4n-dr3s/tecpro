@@ -34,6 +34,9 @@ class Main {
 
 		Camion camion = new Camion(20);
 
+		// Contenedor<Carga> vacioo = new Contenedor<>(10);
+		// camion.guardar(vacioo);
+
 		// Esto no deberia compilar
 		// camion.guardar(elvis_presley);
 

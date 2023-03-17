@@ -8,4 +8,8 @@ public class Producto extends Transportable implements Carga {
         this.peso = peso;
     }
 
+    public String tipo() {
+        return "Carga Estándar";
+    }
+
 }
