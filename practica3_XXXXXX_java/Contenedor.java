@@ -1,10 +1,9 @@
-// Autores: Andrei Vlasceanu [839756] & Andres Yubero [842236]
 
-public class Contenedor<T extends Cargable> extends Cargable implements Transportable {
-    Deposito almacen;
-    
+public class Contenedor<T extends Guardable> extends Transportable implements Carga {
+    Almacen<T> almacen;
+
     public Contenedor(double capacidad) {
-        almacen = new Deposito(capacidad);
+        almacen = new Almacen<T>(capacidad);
     }
 
     public String nombre() {
@@ -19,8 +18,8 @@ public class Contenedor<T extends Cargable> extends Cargable implements Transpor
         return almacen.peso();
     }
 
-    public void guardar(T cargable) {
-        almacen.guardar(cargable);
+    public boolean guardar(T cargable) {
+        return almacen.guardar(cargable);
     }
-    
+
 }

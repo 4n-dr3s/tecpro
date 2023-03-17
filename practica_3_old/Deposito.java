@@ -4,7 +4,7 @@ import java.util.List;
 
 // Deposito define objetos en los que se pueden guardar otros objetos
 public class Deposito {
-    protected List<Transportable> items;
+    protected List<Guardable> items;
     protected double capacidad;
 
     public Deposito(double capacidad) {
@@ -14,7 +14,7 @@ public class Deposito {
     public double volumen() {
         double total = 0;
         // Iteramos por cada elemento almacenado en el deposito
-        for (Transportable i : items) {
+        for (Guardable i : items) {
             // Sumamos el volumen de ese elemento al total
             total += i.volumen();
         }
@@ -25,7 +25,7 @@ public class Deposito {
     public double peso() {
         double total = 0;
         // Iteramos por cada elemento almacenado en el deposito
-        for (Transportable i : items) {
+        for (Guardable i : items) {
             // Sumamos el volumen de ese elemento al total
             total += i.peso();
         }
@@ -33,8 +33,8 @@ public class Deposito {
         return total;
     }
 
-    public void guardar(Transportable t) {
-        // Calculamos el volumen actual 
+    public void guardar(Guardable t) {
+        // Calculamos el volumen actual
         if (this.volumen() + t.volumen() <= capacidad) {
             items.add(t);
         }

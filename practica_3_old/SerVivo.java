@@ -1,6 +1,4 @@
-// Autores: Andrei Vlasceanu [839756] & Andres Yubero [842236]
-
-public class SerVivo extends Transportable {
+public class SerVivo extends Cargable {
 
     public SerVivo(String nombre, double volumen, double peso) {
         this.nombre = nombre;
