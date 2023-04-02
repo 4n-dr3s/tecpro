@@ -1,22 +1,26 @@
 public class Nodo {
 
-    protected Nodo padre;
-    protected String nombre;
+    protected Directorio parentNode;
+    protected String name;
 
-    public Nodo(String nombre, Nodo padre) {
-        this.nombre = nombre;
-        this.padre = padre;
+    public Nodo(String name, Directorio parentNode) {
+        this.name = name;
+        this.parentNode = parentNode;
     }
 
-    public String getNombre() {
-        return nombre;
+    public Directorio getParent() {
+        return parentNode;
     }
 
-    public String pwd(){
-        if (padre == null) {
+    public String getName() {
+        return name;
+    }
+
+    public String pwd() {
+        if (parentNode == null) {
             return "";
         } else {
-            return padre.pwd() + "/" + nombre;
+            return parentNode.pwd() + "/" + name;
         }
     }
 }

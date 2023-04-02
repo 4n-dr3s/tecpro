@@ -1,8 +1,8 @@
 public class Enlace extends Nodo {
-    Nodo referenciado;
-    
-    public Enlace(String nombre, Nodo padre, Nodo referenciado){
-        super(nombre, padre);
-        this.referenciado = referenciado;
+    Nodo referenced;
+
+    public Enlace(String nombre, Directorio parentNode, Nodo referenced) {
+        super(nombre, parentNode);
+        this.referenced = referenced;
     }
 }
