@@ -42,7 +42,7 @@ public class Shell {
             if (n instanceof Fichero) {
                 ((Fichero) n).setSize(size);
             } else {
-                throw new ExcepcionArbolFicheros("No es un fichero");
+                throw new ExcepcionNoEsFichero();
             }
         }
 
@@ -55,7 +55,7 @@ public class Shell {
             // Se crea el directorio
             wd.mkdir(name, wd);
         } else {
-            throw new ExcepcionArbolFicheros("Ya existe un directorio con ese nombre");
+            throw new ExcepcionYaExisteDirectorio();
         }
     }
 
@@ -68,7 +68,7 @@ public class Shell {
             wd = p.getWd();
             System.out.println(wd.getName());
         } else {
-            throw new ExcepcionArbolFicheros("No se puede apuntar a un fichero");
+            throw new ExcepcionApuntarFichero();
         }
 
     }

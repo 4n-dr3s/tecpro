@@ -26,8 +26,7 @@ public class Path {
                     // Movemos el directorio de trabajo al padre
                     wd = wd.getParent();
                     if (wd == null) {
-                        throw new ExcepcionArbolFicheros(
-                                "Fuera de los límites. No existe el nodo padre");
+                        throw new ExcepcionLimitePadre();
                     }
                 } else if (!lista[i].equals(".")) { // Si no aparece "."
                     Nodo hijo = wd.existeNodo(lista[i]);
@@ -59,7 +58,7 @@ public class Path {
                                 }
                             } else {
                                 /* Error throw exception demasiados enlaces que apuntan a enlaces */
-                                throw new ExcepcionArbolFicheros("Limite de referencias alcanzado");
+                                throw new ExcepcionLimiteReferencias();
                             }
 
                         } else { // El hijo es un fichero
@@ -68,12 +67,11 @@ public class Path {
                                 file = (Fichero) hijo;
                                 // System.out.println("Fichero en el último elemento del path");
                             } else { // Fichero en medio del path
-                                throw new ExcepcionArbolFicheros(
-                                        "Se ha encontrado el fichero " + lista[i] + " en medio del path");
+                                throw new ExcepcionFicheroComoDirectorio();
                             }
                         }
                     } else { // No existe el nodo hijo
-                        throw new ExcepcionArbolFicheros("No existe el nodo al que apunta el path");
+                        throw new ExcepcionNoExisteNodo();
                     }
                 }
             }
