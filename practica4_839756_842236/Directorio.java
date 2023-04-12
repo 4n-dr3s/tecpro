@@ -1,3 +1,5 @@
+// Autores: Andrei Vlasceanu [839756] & Andres Yubero [842236]
+
 import java.util.ArrayList;
 
 public class Directorio extends Nodo {

@@ -1,3 +1,5 @@
+// Autores: Andrei Vlasceanu [839756] & Andres Yubero [842236]
+
 public class Path {
     private Directorio wd; // Working directory del path
     private Fichero file; // Fichero al que apunta el path

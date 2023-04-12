@@ -1,3 +1,5 @@
+// Autores: Andrei Vlasceanu [839756] & Andres Yubero [842236]
+
 public class Shell {
     private Directorio root; // Raíz del sistema de ficheros
     private Directorio wd; // Working directory
@@ -90,16 +92,43 @@ public class Shell {
         return p.getNode().getSize();
     }
 
+    private boolean esBorradoErroneo(Directorio n, Directorio wdir) {
+        Directorio aux = wdir;
+        // Iteramos por cada uno de los padres de wd, empezando por él mismo
+        while (aux != null) {
+            // Comprobamos si el directorio que queremos
+            // eliminar coincide co wd o sus padres
+            if (aux == n) {
+                // Si es así devolvemos true (borrado erróneo)
+                return true;
+            }
+            // Tomamos el padre
+            aux = aux.getParent();
+        }
+        return false;
+    }
+
     public void rm(String path) throws ExcepcionArbolFicheros {
         // Se crea un ruta a partir del path
         Path p = new Path(path, root, wd);
         Nodo n = p.getNode();
-        // Si el nodo al que se apunta es un directorio
-        if (n instanceof Directorio) {
-            // Se eliminan todos los nodos dentro del directorio
-            ((Directorio) n).removeAllChildren();
+        // Si no se quiere eliminar root
+        if (n != root) {
+            // Si el nodo al que se apunta es un directorio
+            if (n instanceof Directorio) {
+                // Nos aseguramos de que no eliminamos el wd o alguno de sus padres
+                if (!esBorradoErroneo((Directorio) n, wd)) {
+                    // Se eliminan todos los nodos dentro del directorio
+                    ((Directorio) n).removeAllChildren();
+                } else {
+                    throw new ExcepcionEliminarWd();
+                }
+            }
+            // Se elimina al propio nodo apuntado por el path
+            n.getParent().removeChild(n);
+        } else {
+            throw new ExcepcionEliminarRoot();
         }
-        // Se elimina al propio nodo apuntado por el path
-        n.getParent().removeChild(n);
+
     }
 }

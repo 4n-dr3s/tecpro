@@ -1,3 +1,5 @@
+// Autores: Andrei Vlasceanu [839756] & Andres Yubero [842236]
+
 public class Fichero extends Nodo {
    private int size;
 

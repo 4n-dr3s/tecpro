@@ -1,5 +1,6 @@
-abstract class Nodo {
+// Autores: Andrei Vlasceanu [839756] & Andres Yubero [842236]
 
+abstract class Nodo {
     protected Directorio parentNode;
     protected String name;
 
