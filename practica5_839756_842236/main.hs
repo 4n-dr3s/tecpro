@@ -1,0 +1,1 @@
+main = print (round 6.51)
