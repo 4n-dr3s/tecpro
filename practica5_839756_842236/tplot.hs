@@ -1,4 +1,8 @@
 import Turtle
+import Distribution.Fields.LexerMonad (getPos)
+
+getPosition :: Turtle -> Position
+getPosition (_,_,p,_) = p
 
 replaceMove :: Char -> Move
 replaceMove c 
@@ -7,12 +11,13 @@ replaceMove c
     | c == '-' = TurnLeft
 
 tplot :: Turtle -> String -> [Position]
-tplot tortuga instrucciones = [(0,0)]
-
-dummy :: String -> [Move]
-dummy = map replaceMove
+tplot tortuga instrucciones = 
+    --[getPosition ( fondr moveTurtle tortuga (map replaceMove instrucciones) )]
+    [getPosition ( moveTurtle (1,90,(0,0),90) Forward )]
 
 --tplot tortuga instrucciones = foldr moveTurtle tortuga instrucciones
 
---main = print ( tplot (1,90,(0,0),90) ">+>+>+>+" )
-main = print ">+>+>+>+"
+main :: IO ()
+-- main = print ( getPosition (1,90,(0,0),90) )
+
+main = print ( tplot (1,90,(0,0),90) ">+>+>+>+" )
