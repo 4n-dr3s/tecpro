@@ -1,3 +1,5 @@
+module Tplot where
+
 import SVG
 import Turtle
 
@@ -11,7 +13,7 @@ replaceMove c
   | c == '-' = TurnLeft
 
 tplot :: Turtle -> String -> [Position]
-tplot tortuga instrucciones =
-  map getPosition (scanl moveTurtle tortuga (map replaceMove instrucciones))
+tplot tortoise steps =
+  map getPosition (scanl moveTurtle tortoise (map replaceMove steps))
 
--- main = savesvg "test" (tplot (1, 90, (0, 0), 90) ">+>+>+>+")
+--main = savesvg "test" (tplot (1, 0, (0, 0), 90) ">+>+>+>+")
