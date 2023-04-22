@@ -1,4 +1,8 @@
+-- Autores: Andrei Vlasceanu [839756] & Andres Yubero [842236]
+
 module Rules where
+
+-- En este módulo se encuentran diferentes reglas para generar dibujos
 
 -- Curva de Koch
 rulesKoch :: Char -> String

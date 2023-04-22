@@ -1,3 +1,5 @@
-all: ghc −−make main.hs
+all: 
+	ghc --make main.hs
 
-clean: @rm -f *.o *.hi *.svg main
+clean: 
+	@rm -f *.o *.hi *.svg main
