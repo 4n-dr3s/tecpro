@@ -41,47 +41,58 @@ build = foldl add Empty
 
 -- Construye un árbol equilibrado, ordenando la lista y dividiéndola en dos por la mediana
 buildBalanced :: (Ord x) => [x] -> Tree x
-buildBalanced [] = Empty
-buildBalanced [x] = Leaf x
-buildBalanced xs = Branch mid (buildBalanced left) (buildBalanced right)
-  where
-    sorted = sort xs
-    len = length sorted
-    mid = sorted !! (len `div` 2)
-    left = take (len `div` 2) sorted
-    right = drop (len `div` 2 + 1) sorted
+buildBalanced xs = buildBalancedAux (sort xs)
 
+-- Función auxiliar de "buildBalanced"
+buildBalancedAux :: (Ord x) => [x] -> Tree x
+buildBalancedAux [] = Empty
+buildBalancedAux [x] = Leaf x
+buildBalancedAux xs = Branch m (buildBalancedAux lc) (buildBalancedAux rc)
+  where (lc,m:rc) = splitAt (div (length xs) 2) xs
+
+-- Hace recorrido en profundidad en preorden del árbol
 preorder :: (Ord x) => Tree x -> [x]
 preorder Empty = []
 preorder (Leaf x) = [x]
 preorder (Branch x lc rc) = [x] ++ preorder lc ++ preorder rc
 
+-- Hace recorrido en profundidad en postorden del árbol
 postorder :: (Ord x) => Tree x -> [x]
 postorder Empty = []
 postorder (Leaf x) = [x]
 postorder (Branch x lc rc) = postorder lc ++ postorder rc ++ [x]
 
+-- Hace recorrido en profundidad en inorden del árbol
 inorder :: (Ord x) => Tree x -> [x]
 inorder Empty = []
 inorder (Leaf x) = [x]
 inorder (Branch x lc rc) = inorder lc ++ [x] ++ inorder rc
 
+-- Construye un árbol equilibrado (es decir, de altura mínima) 
+-- a partir de otro cualquiera
 balance :: (Ord x) => Tree x -> Tree x
 balance Empty = Empty
 balance t = buildBalanced (inorder t)
 
+-- Busca en el árbol binario de búsqueda t y devuelve una lista 
+-- con todos los elementos del árbol que están entre los valores 
+-- xmin y xmax (ambos inclusive).
 between :: (Ord x) => Tree x -> x -> x -> [x]
-between t xmin xmax = [i | i <- inorder t, i >= xmin, i <= xmax]
+between Empty xmin xmax = []
+between (Leaf l) xmin xmax = [l | l >= xmin && l <= xmax]
+between (Branch x lc rc) xmin xmax
+  | x < xmin = between rc xmin xmax
+  | x > xmax = between lc xmin xmax
+  | otherwise = between lc xmin xmax ++ [x] ++ between rc xmin xmax
+
+-- Función auxiliar para mostrar el árbol por pantalla
+display :: Show x => Tree x -> Int -> String
+display Empty n = "<>"
+display (Leaf x) n = show x
+display (Branch x lc rc) n = show x ++ "\n" ++
+  rep ++ display lc (n+1) ++ "\n" ++
+  rep ++ display rc (n+1)
+  where rep = replicate (3*n) ' ' ++ "|- "
 
 instance Show x => Show (Tree x) where
-  show Empty = "<>"
-  show (Leaf x) = show x
-  show (Branch x lc rc) =
-    show x
-      ++ "\n"
-      ++ "|-"
-      ++ showIndented lc
-      ++ "|-"
-      ++ showIndented rc
-    where
-      showIndented t = unlines $ map (" " ++) (lines $ show t)
+  show t = display t 0
